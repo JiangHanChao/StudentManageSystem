@@ -99,8 +99,17 @@ public class StudentControl extends HttpServlet {
     			e.printStackTrace();
     		}
             out.println(gradeList);
+        }else if(method.equals("selectInfo")) {
+        	JSONArray studentInfo = null;
+        	System.out.println("<view student Info:"+username+">");
+            try {
+            	studentInfo = StudentService.selectInfo(u);
+    		} catch (SQLException | JSONException e) {
+    			e.printStackTrace();
+    		}
+            out.println(studentInfo);
         }
-         
+        
         out.close();  
         
         

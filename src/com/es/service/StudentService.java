@@ -133,7 +133,31 @@ public class StudentService extends BaseService {
 		
     	return result;
 	}
-	
+	public static JSONArray selectInfo(Student u) throws SQLException, JSONException{
+		JSONArray info = new JSONArray();
+		String sql = "SELECT * FROM ES_student WHERE sno=?;";
+		openConnection();
+		pstmt = getPStatement(sql);
+		pstmt.setString(1,u.getNumber());
+		ResultSet result = pstmt.executeQuery();
+		if(result.next()) {
+			JSONObject obj= new JSONObject ();
+			obj.append("stu_no", result.getString("sno"));
+			obj.append("stu_name", result.getString("sname"));
+			obj.append("stu_bir", result.getString("sbirth"));
+			obj.append("stu_age", result.getString("sage"));
+			obj.append("stu_sex", result.getString("ssex"));
+			obj.append("stu_pol", result.getString("spolitc"));
+			obj.append("stu_time", result.getString("sadmission"));
+			obj.append("stu_addr", result.getString("sfamilyaddr"));
+			obj.append("stu_post", result.getString("spostcode"));
+			obj.append("stu_grade", result.getString("grade"));
+			obj.append("stu_major", result.getString("major"));
+			info.put(obj);
+		}
+		
+		return info;
+	}
 	public static JSONArray selectgrade(Student u) throws SQLException, JSONException{	
     	JSONArray gradeList = new JSONArray();
     	String gradeSql = "SELECT cno,cname,score FROM ES_course,ES_selected WHERE ES_course.cno=ES_selected.course_cno AND score IS NOT NULL AND student_sno=?;";
