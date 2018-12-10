@@ -278,7 +278,7 @@ public class AdminService extends BaseService {
 			pstmt.setString(11, u.getPostcode());
 	    	pstmt.setInt(12,u.getGrade());
 	    	pstmt.setString(13,u.getMajor());
-	    	if(pstmt.execute()) {
+	    	if(pstmt.executeUpdate()==1) {
 	    		obj.put("statusCode", 1);
 	    	}else {
 	    		obj.put("statusCode", 0);

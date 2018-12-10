@@ -32,30 +32,28 @@
                 	data = eval("("+data+")"); //数组     
                     $.each(data, function (index) {  
                         //循环获取数据    
-                    	var stu_name = data[index].stu_name;
-                        var stu_no = data[index].stu_no;
-                        var stu_class = data[index].stu_class;
-                        var stu_age = data[index].stu_age;
-                        var stu_gender = data[index].stu_gender;
+                    	var stu_no = data[index].stu_no;
+                        var stu_name = data[index].stu_name;
                         var stu_bir = data[index].stu_bir;
+                        var stu_age = data[index].stu_age;
+                        var stu_sex = data[index].stu_sex;
                         var stu_pol = data[index].stu_pol;
                         var stu_time = data[index].stu_time;
                         var stu_addr = data[index].stu_addr;
                         var stu_post = data[index].stu_post;
-                        var stu_dep = data[index].stu_dep;
+                        var stu_grade = data[index].stu_grade;
                         var stu_major = data[index].stu_major;
                         tt =  "<tr class='gradeX odd'>"
-                            +"<td>"+stu_name+"</td>"
                             +"<td>"+stu_no+"</td>"
-                            +"<td>"+stu_class+"</td>"
-                            +"<td>"+stu_age+"</td>"
-                            +"<td>"+stu_gender+"</td>"
+                            +"<td>"+stu_name+"</td>"
                             +"<td>"+stu_bir+"</td>"
+                            +"<td>"+stu_age+"</td>"
+                            +"<td>"+stu_sex+"</td>"
                             +"<td>"+stu_pol+"</td>"
                             +"<td>"+stu_time+"</td>"
                             +"<td>"+stu_addr+"</td>"
                             +"<td>"+stu_post+"</td>"
-                            +"<td>"+stu_dep+"</td>"
+                            +"<td>"+stu_grade+"</td>"
                             +"<td>"+stu_major+"</td></tr>";
                         $("#insertPlace").append(tt);
                     }); 
@@ -65,30 +63,28 @@
                 	data = eval("("+jqXHR.responseText+")");
                     $.each(data, function (index) {  
                         //循环获取数据      
-                         var stu_name = data[index].stu_name;
                          var stu_no = data[index].stu_no;
-                         var stu_class = data[index].stu_class;
-                         var stu_age = data[index].stu_age;
-                         var stu_gender = data[index].stu_gender;
+                         var stu_name = data[index].stu_name;
                          var stu_bir = data[index].stu_bir;
+                         var stu_age = data[index].stu_age;
+                         var stu_sex = data[index].stu_sex;
                          var stu_pol = data[index].stu_pol;
                          var stu_time = data[index].stu_time;
                          var stu_addr = data[index].stu_addr;
                          var stu_post = data[index].stu_post;
-                         var stu_dep = data[index].stu_dep;
+                         var stu_grade = data[index].stu_grade;
                          var stu_major = data[index].stu_major;
                          tt =  "<tr class='gradeX odd'>"
-                             +"<td>"+stu_name+"</td>"
                              +"<td>"+stu_no+"</td>"
-                             +"<td>"+stu_class+"</td>"
-                             +"<td>"+stu_age+"</td>"
-                             +"<td>"+stu_gender+"</td>"
+                             +"<td>"+stu_name+"</td>"
                              +"<td>"+stu_bir+"</td>"
+                             +"<td>"+stu_age+"</td>"
+                             +"<td>"+stu_sex+"</td>"
                              +"<td>"+stu_pol+"</td>"
                              +"<td>"+stu_time+"</td>"
                              +"<td>"+stu_addr+"</td>"
                              +"<td>"+stu_post+"</td>"
-                             +"<td>"+stu_dep+"</td>"
+                             +"<td>"+stu_grade+"</td>"
                              +"<td>"+stu_major+"</td></tr>";
                          $("#insertPlace").append(tt);
                     });  
@@ -120,17 +116,16 @@
                         <table class="table table-striped table-bordered table-hover dataTables-example">
                             <thead>
                                 <tr>
-                                    <th>姓名</th>
                                     <th>学号</th>
-                                    <th>班级</th>
+                                    <th>姓名</th>
+                                    <th>出生年月</th>
                                     <th>年龄</th>
                                     <th>性别</th>
-                                    <th>出生日期</th>
                                     <th>政治面貌</th>
                                     <th>入学时间</th>
                                     <th>家庭住址</th>
                                     <th>邮编</th>
-                                    <th>系别</th>
+                                    <th>年级</th>
                                     <th>专业</th>
                                 </tr>
                             </thead>
